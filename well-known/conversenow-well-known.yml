@@ -1,0 +1,39 @@
+generated: '2026-08-09'
+method: searched
+source: https://conversenow.ai/.well-known/
+host: https://conversenow.ai
+documents:
+- path: /.well-known/security.txt
+  status: 200
+  file: conversenow-security.txt
+  spec: RFC 9116
+- path: /.well-known/openid-configuration
+  status: 404
+- path: /.well-known/oauth-authorization-server
+  status: 404
+- path: /.well-known/oauth-protected-resource
+  status: 404
+- path: /.well-known/api-catalog
+  status: 404
+- path: /.well-known/ai-plugin.json
+  status: 404
+- path: /.well-known/agent-card.json
+  status: 404
+- path: /.well-known/agent.json
+  status: 404
+x-evidence:
+  fetched: '2026-08-09'
+  control_path: /.well-known/this-does-not-exist-xyz123.txt
+  control_status: 404
+  note: >-
+    A control path under /.well-known/ returns 404, so the 200 on security.txt is a real
+    document and not a single-page-app catch-all answering 200 for every path.
+other_hosts_probed:
+- host: status.conversenow.ai
+  note: Instatus-hosted status page; /.well-known/security.txt, /agent-card.json and /agent.json all 404.
+- host: docs.conversenow.ai
+  note: DNS resolves (34.123.64.3) but TCP 80 and 443 are closed/filtered — a dangling record, no listener.
+- host: app.conversenow.ai
+  note: DNS resolves (142.93.23.88) but TCP 80 and 443 are closed/filtered — a dangling record, no listener.
+- host: api.conversenow.ai
+  note: No DNS record.

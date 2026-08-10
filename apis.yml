@@ -1,17 +1,34 @@
 aid: conversenow
 name: ConverseNow
-description: 'ConverseNow is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'ConverseNow is an Austin, Texas voice AI company, founded in 2018, that
+  builds conversational AI virtual assistants which automate restaurant order taking
+  across high-volume voice channels — inbound phone, drive-thru, SMS, and kiosk. The
+  platform uses large language models to understand natural-language orders, suggest
+  upsells, and confirm items in real time, and it markets an "Order Injection API"
+  that pushes completed orders into restaurant point-of-sale and order-management
+  systems. ConverseNow lists integrations with Brink POS, Fiserv, Focus, ItsaCheckmate,
+  NCR Aloha, Olo, PAR, Qu, Xpient, Adora POS, and Deliverect, and reports processing
+  more than two million conversations per month across national QSR brands. It
+  publishes no public developer portal, API reference, or machine-readable specification;
+  API access is reached through a sales consultation.'
 url: https://raw.githubusercontent.com/api-evangelist/conversenow/refs/heads/main/apis.yml
+image: https://storage.googleapis.com/conversenow/static/website/conversenow-logo.svg
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-08-09'
 modified: '2026-08-09'
 tags:
 - Company
+- Voice AI
+- Conversational AI
+- Restaurants
+- Point of Sale
+- Ordering
+- Drive-Thru
+- Speech Recognition
+- Artificial Intelligence
+- Food Service
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +36,61 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: VulnerabilityDisclosure
+  url: security/conversenow-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/conversenow-domain-security.yml
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://conversenow.ai/
+- type: Blog
+  url: https://conversenow.ai/insights.html
+- type: GitHubOrganization
+  url: https://github.com/conversenow
+- type: SignUp
+  url: https://conversenow.ai/book-demo.html
+- type: TermsOfService
+  url: https://conversenow.ai/terms-and-conditions.html
+- type: PrivacyPolicy
+  url: https://conversenow.ai/privacy-policy.html
+- type: Security
+  url: https://conversenow.ai/.well-known/security.txt
+- type: SecurityTxt
+  url: well-known/conversenow-security.txt
+- type: WellKnown
+  url: well-known/conversenow-well-known.yml
+- type: Lifecycle
+  url: lifecycle/conversenow-lifecycle.yml
+- type: StatusPage
+  url: https://status.conversenow.ai/
+- type: ChangeLog
+  url: changelog/conversenow-changelog.yml
+- type: LLMsTxt
+  url: llms/conversenow-llms.txt
+x-enrichment:
+  date: '2026-08-09'
+  status: minimal
+  artifacts_added: 7
+  pass: local-v1
+x-coverage:
+  state: gated
+  reason: sales-gate
+  detail: >-
+    ConverseNow markets an "Order Injection API" as a product on its products page and its
+    own status page monitors a component literally named "API Server", but the only route
+    to it is the "Book a Consultation" form — there is no developer portal, no API
+    reference, and the docs.conversenow.ai and app.conversenow.ai hostnames are dangling
+    DNS records with no listener on port 80 or 443.
+  evidence:
+  - url: https://conversenow.ai/products.html
+    status: 200
+  - url: https://conversenow.ai/book-demo.html
+    status: 200
+  - url: https://docs.conversenow.ai/
+    status: 0
+  - url: https://developer.conversenow.ai/
+    status: 0
+  - url: https://conversenow.ai/openapi.json
+    status: 404
+  - url: https://status.conversenow.ai/
+    status: 200
+  checked: '2026-08-09'

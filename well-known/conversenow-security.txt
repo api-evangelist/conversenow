@@ -1,0 +1,5 @@
+Contact: mailto:security@conversenow.ai
+Expires: 2027-05-29T05:44:43.000Z
+Preferred-Languages: en
+Canonical: https://conversenow.ai/.well-known/security.txt
+Policy: https://conversenow.ai/privacy-policy.html

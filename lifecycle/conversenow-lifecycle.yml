@@ -1,0 +1,42 @@
+generated: '2026-08-09'
+method: searched
+source: https://status.conversenow.ai/
+status_page: https://status.conversenow.ai/
+status_page_platform: Instatus
+status_page_components:
+- name: API Server
+  state: operational
+- name: POS Server
+  state: operational
+- name: Downstream Services
+  state: operational
+status_page_features:
+  incident_history: true
+  history_window: 90 days
+  subscribe: [email, slack, microsoft-teams]
+  summary_endpoint: https://status.conversenow.ai/summary.json
+versioning:
+  scheme: unknown
+  note: >-
+    ConverseNow publishes no public API reference, so no versioning scheme could be
+    observed. The "Order Injection API" is named as a product on the products page but
+    has no public contract or version identifier.
+deprecation:
+  policy_url: null
+  sunset_header: unknown
+  note: No deprecation or sunset policy is published on any public ConverseNow page.
+sla:
+  url: null
+  uptime_target: null
+  note: >-
+    No published SLA. The status page reports 100% observed uptime for the API Server and
+    POS Server components over its rolling window, which is a report, not a commitment.
+deprecated_operations: []
+x-evidence:
+- url: https://status.conversenow.ai/
+  http_status: 200
+  fetched: '2026-08-09'
+- url: https://status.conversenow.ai/summary.json
+  http_status: 200
+  fetched: '2026-08-09'
+  body: '{"page":{"name":"ConverseNow","url":"https://status.conversenow.ai","status":"UP"}}'

@@ -1,0 +1,31 @@
+generated: '2026-08-09'
+method: searched
+source: https://conversenow.ai/insights.html
+title: Platform Updates
+scheme: dated-release-notes
+note: >-
+  ConverseNow publishes product release notes under the "Platform Updates" heading at
+  /insights.html. Entries are dated to the month, carry no version identifier, and describe
+  platform-wide capability changes rather than API changes — there is no API-level changelog,
+  because there is no public API reference to change against.
+current_version: null
+entries:
+- date: '2025-05'
+  title: AI Your Way — is now more personable, natural, friendly and engaging
+  breaking: false
+  additions:
+  - Conversational naturalness improvements to the voice assistant persona
+  highlights:
+  - Reported guest satisfaction rating of 4.55 out of 5
+- date: '2024-12'
+  title: 'GenAI + Drive-Thru Expansion: A New Era of Real-Time, Scalable Conversational AI'
+  breaking: false
+  additions:
+  - Generative AI rolled out across all ordering channels
+  - Drive-thru expansion
+  highlights:
+  - Reported 95% non-intervention rate in drive-thru operations
+x-evidence:
+- url: https://conversenow.ai/insights.html
+  http_status: 200
+  fetched: '2026-08-09'
